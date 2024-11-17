@@ -1,0 +1,142 @@
+/* General reset for consistent box model and margin/padding */
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Page background and full viewport height */
+body {
+    height: 100vh;
+    background: #132d5dec; /* Company Blue */
+    font-family: sans-serif;
+}
+
+/* Styling the header */
+#head-text {
+    text-align: center;
+    color: #699af5; /* Company Blue */
+    margin: 1rem;
+    font-size: 2rem;
+}
+
+/* Styling the input and button inside #newtask */
+#newtask {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#newtask input {
+    height: 1.7rem;
+    width: 12.4rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#newtask button {
+    height: 1.7rem;
+    width: 3rem;
+    background-color: #699af5;
+    color: #132d5d;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#newtask button:hover {
+    background-color: #557bb5;
+}
+
+/* Container for the task list */
+.container {
+    width: 40%;
+    top: 30%;
+    left: 50%;
+    background: #132d5d61;
+    border-radius: 10px;
+    min-width: 450px;
+    position: absolute;
+    min-height: 9rem;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+}
+
+/* Styling for the tasks section to allow scrolling */
+.tasks {
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+/* Styling the scrollbar within the tasks section */
+.tasks::-webkit-scrollbar {
+    width: 10px;
+}
+
+.tasks::-webkit-scrollbar-track {
+    background: #BAE6FF;
+    border-radius: 25px;
+}
+
+.tasks::-webkit-scrollbar-thumb {
+    background: #0D75EC;
+    border-radius: 25px;
+}
+
+/* Task item styling */
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    margin: 0.5rem 0;
+    background-color: #f1f5fb;
+    border-radius: 5px;
+}
+
+.task label {
+    display: flex;
+    align-items: center;
+}
+
+.task p {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.task input[type="checkbox"] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Delete button styling */
+.task .delete {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+}
+
+.task .delete i {
+    font-size: 1.5rem;
+    color: #FF4C4C;
+}
+
+.task .delete i:hover {
+    color: #FF1C1C;
+}
+
+/* Styling for the completed (checked) task */
+.task.checked p {
+    text-decoration: line-through;
+    color: #8a8a8a;
+}
